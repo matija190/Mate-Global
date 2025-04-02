@@ -45,6 +45,8 @@
             padding: 20px;
             background-color: rgba(224, 224, 224, 0.8); /* Smanjena opacnost sive pozadine */
             color: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             background-image: url('pozadinska-slika.jpg'); /* Slika koju želite postaviti kao pozadinu */
             background-size: cover;
@@ -105,6 +107,7 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
+            border-radius: 10px;
             cursor: pointer;
             transition: opacity 0.3s ease;
         }
@@ -222,41 +225,21 @@
             font-size: 18px;
         }
 
-        /* Responzivnost za mobitele i tablete */
-        @media screen and (max-width: 768px) {
-            .header h1 {
-                font-size: 36px;
-            }
-            .nav a {
-                font-size: 16px;
-            }
-            .container {
-                padding: 10px;
-            }
-            .contact-form {
-                padding: 10px;
-            }
+        .services-list {
+            list-style-type: none;
+            margin-top: 20px;
+            padding: 0;
         }
 
-        /* Responzivnost za mobilne uređaje */
-        @media screen and (max-width: 480px) {
-            .header h1 {
-                font-size: 28px;
-            }
-            .nav a {
-                font-size: 14px;
-            }
-            .slideshow-container {
-                max-width: 100%;
-            }
-            .gallery img {
-                width: 100px;
-                height: 100px;
-            }
-            .contact-form input, .contact-form textarea {
-                font-size: 12px;
-            }
+        .services-list li {
+            background-color: #003366;
+            color: white;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
         }
+
     </style>
 </head>
 <body>
@@ -273,6 +256,16 @@
             <h2 id="o-nama">O nama</h2>
             <p>Mate Global d.o.o. je renomirana tvrtka sa sjedištem u Križevcima, specijalizirana za građevinske radove s posebnim naglaskom na Knauf sustave. Naša stručnost i dugogodišnje iskustvo omogućuju nam pružanje vrhunskih usluga, prilagođenih potrebama klijenata.</p>
             <p>Naša misija je osigurati kvalitetnu i preciznu izvedbu građevinskih radova, koristeći najmodernije materijale i tehnike. Posvećeni smo postizanju visoke razine zadovoljstva naših klijenata kroz profesionalan pristup i vrhunsku uslugu.</p>
+
+            <h2>Što nudimo</h2>
+            <ul class="services-list">
+                <li>Izrada i montaža gipskartonskih pregrada</li>
+                <li>Spušteni stropovi</li>
+                <li>Akustična i termo izolacija</li>
+                <li>Gletanje i farbanje zidova i stropova</li>
+                <li>Adaptacija i rušenje objekata</li>
+                <li>Sanacija i obnova interijera</li>
+            </ul>
 
             <h2 id="usluge">Usluge</h2>
             <ul>

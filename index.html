@@ -45,7 +45,7 @@
             padding: 20px;
             background-color: rgba(224, 224, 224, 0.8); /* Smanjena opacnost sive pozadine */
             color: #ffffff;
-            border-radius: 18px;
+            border-radius: 0px; /* Ovdje smo uklonili zaobljene kutove */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
             background-image: url('pozadinska-slika.jpg'); /* Slika koju želite postaviti kao pozadinu */
@@ -103,6 +103,9 @@
             margin-top: 20px;
             gap: 10px;
         }
+        .gallery-item {
+            text-align: center;
+        }
         .gallery img {
             width: 150px;
             height: 150px;
@@ -113,6 +116,14 @@
         }
         .gallery img:hover {
             opacity: 0.7;
+        }
+
+        .gallery-text {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+            font-size: 16px;
+            color: #FFD700;  /* Zlatna boja */
         }
 
         /* Modal styles */
@@ -240,6 +251,14 @@
             font-size: 16px;
         }
 
+        /* Zlatna boja za naslov galerije */
+        .gallery-title {
+            color: #FFD700; /* Zlatna boja */
+            text-align: center;
+            font-size: 32px;
+            margin-top: 30px;
+        }
+
     </style>
 </head>
 <body>
@@ -267,14 +286,6 @@
                 <li>Sanacija i obnova interijera</li>
             </ul>
 
-            <h2 id="usluge">Usluge</h2>
-            <ul>
-                <li>Knauf sustavi svih vrsta</li>
-                <li>Armstrong stropne ploče</li>
-                <li>Akustične instalacije</li>
-                <li>Külldevke sustavi</li>
-            </ul>
-
             <div class="slideshow-container">
                 <div class="slides active"><img src="slika1.jpg" alt="Slika 1"></div>
                 <div class="slides"><img src="slika2.jpg" alt="Slika 2"></div>
@@ -283,13 +294,28 @@
                 <div class="slides"><img src="slika5.jpg" alt="Slika 5"></div>
             </div>
 
-            <h2>Galerija</h2>
+            <h2 class="gallery-title">Galerija</h2>
             <div class="gallery">
-                <img src="slika1.jpg" alt="Slika 1" onclick="openModal('slika1.jpg')">
-                <img src="slika2.jpg" alt="Slika 2" onclick="openModal('slika2.jpg')">
-                <img src="slika3.jpg" alt="Slika 3" onclick="openModal('slika3.jpg')">
-                <img src="slika4.jpg" alt="Slika 4" onclick="openModal('slika4.jpg')">
-                <img src="slika5.jpg" alt="Slika 5" onclick="openModal('slika5.jpg')">
+                <div class="gallery-item">
+                    <img src="slika1.jpg" alt="Slika 1" onclick="openModal('slika1.jpg')">
+                    <span class="gallery-text">Slika 1</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika2.jpg" alt="Slika 2" onclick="openModal('slika2.jpg')">
+                    <span class="gallery-text">Slika 2</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika3.jpg" alt="Slika 3" onclick="openModal('slika3.jpg')">
+                    <span class="gallery-text">Slika 3</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika4.jpg" alt="Slika 4" onclick="openModal('slika4.jpg')">
+                    <span class="gallery-text">Slika 4</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika5.jpg" alt="Slika 5" onclick="openModal('slika5.jpg')">
+                    <span class="gallery-text">Slika 5</span>
+                </div>
             </div>
 
             <!-- Kontakt obrazac -->

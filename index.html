@@ -15,7 +15,7 @@
         }
 
         .header {
-            background-color: #ffffff; /* Bijela pozadina */
+            background-color: #003366;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -25,14 +25,10 @@
 
         .header h1 {
             font-size: 36px;
-            color: #003366;
+            color: #FFD700;
             margin: 0;
             font-weight: bold;
-        }
-
-        .logo {
-            height: 60px;
-            margin-right: 20px;
+            text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.7), -2px -2px 4px rgba(255, 0, 0, 0.7); /* Crvene linije oko slova */
         }
 
         .nav {
@@ -43,7 +39,7 @@
 
         .nav a {
             text-decoration: none;
-            color: #003366;
+            color: #ffffff;
             font-weight: bold;
             font-size: 18px;
         }
@@ -56,12 +52,12 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            background-color: rgba(224, 224, 224, 0.8);
+            background-color: rgba(224, 224, 224, 0.8); /* Smanjena opacnost sive pozadine */
             color: #ffffff;
-            border-radius: 0px;
+            border-radius: 0px; /* Ovdje smo uklonili zaobljene kutove */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            background-image: url('pozadinska-slika.jpg');
+            background-image: url('pozadinska-slika.jpg'); /* Slika koju želite postaviti kao pozadinu */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -75,14 +71,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Poluprozirna crna prekrivka koja smanjuje vidljivost slike */
             z-index: -1;
         }
 
         .content h2 {
-            color: #FFD700;
+            color: #FFD700; /* Zlatna boja */
             margin-top: 40px;
-            border-bottom: 2px solid #FFD700;
+            border-bottom: 2px solid #FFD700; /* Zlatna linija ispod naslova */
             padding-bottom: 5px;
         }
 
@@ -115,10 +111,10 @@
 
         .gallery {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             justify-content: flex-start;
+            flex-wrap: wrap;
             margin-top: 20px;
+            gap: 10px;
         }
 
         .gallery-item {
@@ -143,9 +139,10 @@
             text-align: center;
             margin-top: 5px;
             font-size: 16px;
-            color: #FFD700;
+            color: #FFD700;  /* Zlatna boja */
         }
 
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -166,12 +163,13 @@
         }
 
         .close {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
             position: absolute;
             top: 10px;
             right: 25px;
             color: #f1f1f1;
-            font-size: 30px;
-            font-weight: bold;
             cursor: pointer;
         }
 
@@ -197,18 +195,21 @@
             right: 10px;
         }
 
+        /* Kontakt form styles */
         .contact-form {
             margin-top: 40px;
             background-color: #ffffff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
-            margin: 40px auto;
+            margin: 20px auto;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         .contact-form input, .contact-form textarea {
-            width: 100%;
+            width: calc(100% - 16px);
             padding: 8px;
             margin: 8px 0;
             border: 1px solid #ccc;
@@ -244,6 +245,7 @@
 
         .social-links a:hover {
             text-decoration: underline;
+            color: #1C86E8;
         }
 
         .location {
@@ -254,8 +256,8 @@
 
         .services-list {
             list-style-type: none;
-            padding: 0;
             margin-top: 20px;
+            padding: 0;
         }
 
         .services-list li {
@@ -267,26 +269,26 @@
             font-size: 16px;
         }
 
+        /* Zlatna boja za naslov galerije */
         .gallery-title {
-            color: #FFD700;
+            color: #FFD700; /* Zlatna boja */
             text-align: center;
             font-size: 32px;
             margin-top: 30px;
         }
 
+        /* Responzivni dizajn */
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
             .header h1 {
                 font-size: 30px;
             }
 
-            .nav {
-                flex-direction: column;
-                align-items: flex-start;
+            .nav a {
+                font-size: 16px;
+            }
+
+            .slideshow-container {
+                max-width: 100%;
             }
 
             .gallery img {
@@ -297,9 +299,19 @@
             .gallery-text {
                 font-size: 14px;
             }
+
+            .contact-form {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
         }
 
         @media (max-width: 480px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
             .gallery img {
                 width: 100px;
                 height: 100px;
@@ -313,19 +325,18 @@
 </head>
 <body>
     <div class="header">
-        <img src="logo.png" alt="Mate Global Logo" class="logo">
-        <h1>Mate Global</h1>
+        <img src="logo.png" alt="Mate Global logo" class="logo">
         <div class="nav">
             <a href="o-nama.html">O nama</a>
             <a href="usluge.html">Usluge</a>
             <a href="#kontakt">Kontakt</a>
         </div>
     </div>
-
     <div class="container">
         <div class="content">
             <h2 id="o-nama">O nama</h2>
-            <p>Mate Global d.o.o. je renomirana tvrtka sa sjedištem u Križevcima, specijalizirana za građevinske radove s posebnim naglaskom na Knauf sustave.</p>
+            <p>Mate Global d.o.o. je renomirana tvrtka sa sjedištem u Križevcima, specijalizirana za građevinske radove s posebnim naglaskom na Knauf sustave. Naša stručnost i dugogodišnje iskustvo omogućuju nam pružanje vrhunskih usluga, prilagođenih potrebama klijenata.</p>
+            <p>Naša misija je osigurati kvalitetnu i preciznu izvedbu građevinskih radova, koristeći najmodernije materijale i tehnike. Posvećeni smo postizanju visoke razine zadovoljstva naših klijenata kroz profesionalan pristup i vrhunsku uslugu.</p>
 
             <h2>Što nudimo</h2>
             <ul class="services-list">
@@ -347,13 +358,29 @@
 
             <h2 class="gallery-title">Galerija</h2>
             <div class="gallery">
-                <div class="gallery-item"><img src="slika1.jpg" alt="Slika 1" onclick="openModal('slika1.jpg')"><span class="gallery-text">Slika 1</span></div>
-                <div class="gallery-item"><img src="slika2.jpg" alt="Slika 2" onclick="openModal('slika2.jpg')"><span class="gallery-text">Slika 2</span></div>
-                <div class="gallery-item"><img src="slika3.jpg" alt="Slika 3" onclick="openModal('slika3.jpg')"><span class="gallery-text">Slika 3</span></div>
-                <div class="gallery-item"><img src="slika4.jpg" alt="Slika 4" onclick="openModal('slika4.jpg')"><span class="gallery-text">Slika 4</span></div>
-                <div class="gallery-item"><img src="slika5.jpg" alt="Slika 5" onclick="openModal('slika5.jpg')"><span class="gallery-text">Slika 5</span></div>
+                <div class="gallery-item">
+                    <img src="slika1.jpg" alt="Slika 1" onclick="openModal('slika1.jpg')">
+                    <span class="gallery-text">Slika 1</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika2.jpg" alt="Slika 2" onclick="openModal('slika2.jpg')">
+                    <span class="gallery-text">Slika 2</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika3.jpg" alt="Slika 3" onclick="openModal('slika3.jpg')">
+                    <span class="gallery-text">Slika 3</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika4.jpg" alt="Slika 4" onclick="openModal('slika4.jpg')">
+                    <span class="gallery-text">Slika 4</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="slika5.jpg" alt="Slika 5" onclick="openModal('slika5.jpg')">
+                    <span class="gallery-text">Slika 5</span>
+                </div>
             </div>
 
+            <!-- Kontakt obrazac -->
             <div class="contact-form" id="kontakt">
                 <h3>Pošaljite nam poruku</h3>
                 <form action="submit_contact_form.php" method="POST">
@@ -372,7 +399,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal za prikaz slike -->
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <span class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</span>
@@ -381,32 +408,48 @@
     </div>
 
     <script>
-        // Slideshow
+        // Funkcionalnost za slideshow
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slides');
         function showSlides() {
             slides.forEach(slide => slide.classList.remove('active'));
-            slideIndex = (slideIndex + 1) % slides.length;
-            slides[slideIndex].classList.add('active');
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+            slides[slideIndex - 1].classList.add('active');
             setTimeout(showSlides, 5000);
         }
         showSlides();
 
-        // Modal
+        // Funkcionalnost modala za slike
         let currentSlide = 0;
         const images = ['slika1.jpg', 'slika2.jpg', 'slika3.jpg', 'slika4.jpg', 'slika5.jpg'];
-        function openModal(src) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("img01").src = src;
-            currentSlide = images.indexOf(src);
+
+        // Otvori modal s slikom
+        function openModal(imgSrc) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            currentSlide = images.indexOf(imgSrc);
         }
+
+        // Zatvori modal
         function closeModal() {
-            document.getElementById("myModal").style.display = "none";
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
         }
-        function moveSlide(dir) {
-            currentSlide = (currentSlide + dir + images.length) % images.length;
-            document.getElementById("img01").src = images[currentSlide];
+
+        // Pomakni slike u modalu lijevo i desno
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = images.length - 1;
+            } else if (currentSlide >= images.length) {
+                currentSlide = 0;
+            }
+            const modalImg = document.getElementById("img01");
+            modalImg.src = images[currentSlide];
         }
     </script>
 </body>
-</html>
+</html> zelim smanjiti logo sliku i plavu pozadinu gdje stoji logo staviti u bijelo.uredi otaj html cijeli 

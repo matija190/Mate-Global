@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mate Global - Modernizirana Stranica</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Mate Global</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
+    :root {
+      --primary: #0e7490;
+      --primary-dark: #0f4c75;
+      --background: #f4f8fb;
+      --text: #222;
+      --white: #ffffff;
+      --accent: #38bdf8;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,29 +22,26 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background);
+      color: var(--text);
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background: #0d47a1;
-      color: white;
-      padding: 20px 30px;
+      background: var(--primary-dark);
+      color: var(--white);
+      padding: 30px 20px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      font-weight: 700;
-      font-size: 2rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      user-select: none;
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     nav {
@@ -44,90 +49,86 @@
     }
 
     nav a {
-      color: #bbdefb;
-      text-decoration: none;
+      color: var(--accent);
       margin: 0 12px;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: #fff;
+      color: var(--white);
     }
 
     main {
       flex: 1;
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 1000px;
+      margin: 50px auto;
       padding: 0 20px;
     }
 
     section {
-      margin-bottom: 50px;
-      background: white;
-      padding: 25px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      transition: box-shadow 0.3s ease;
+      background: var(--white);
+      padding: 30px 35px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease;
     }
 
     section:hover {
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
     }
 
     h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
       margin-bottom: 15px;
-      font-weight: 700;
-      color: #0d47a1;
-      border-bottom: 3px solid #1976d2;
-      padding-bottom: 5px;
-      user-select: none;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
     }
 
     p {
-      font-size: 1.1rem;
-      color: #555;
-      line-height: 1.5;
+      font-size: 1.05rem;
+      color: #444;
+      margin-bottom: 15px;
     }
 
     .btn-primary {
       display: inline-block;
-      background: #1976d2;
+      background: var(--primary);
       color: white;
-      padding: 12px 26px;
-      font-weight: 700;
-      border-radius: 25px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
       text-decoration: none;
       transition: background 0.3s ease;
-      user-select: none;
-      margin-top: 15px;
     }
 
     .btn-primary:hover {
-      background: #0d47a1;
+      background: var(--primary-dark);
     }
 
     footer {
-      background: #0d47a1;
-      color: white;
+      background: var(--primary-dark);
+      color: var(--white);
       text-align: center;
-      padding: 15px 10px;
-      user-select: none;
+      padding: 20px 15px;
       font-size: 0.9rem;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
+    @media (max-width: 640px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
+
       nav a {
         margin: 0 8px;
         font-size: 0.9rem;
       }
-      main {
-        margin: 25px 15px;
-        padding: 0 10px;
+
+      section {
+        padding: 20px;
       }
     }
   </style>
@@ -147,16 +148,14 @@
   <section id="o-nama">
     <h2>O nama</h2>
     <p>
-      Dobrodošli na Mate Global – mjesto gdje povezujemo ljude i mogućnosti diljem svijeta.
-      Naša misija je pružiti vam kvalitetne usluge i podršku u digitalnom dobu.
+      Dobrodošli na Mate Global – spoj tehnologije, komunikacije i inovacije. Naš tim predano radi na pružanju digitalnih rješenja prilagođenih vašim potrebama.
     </p>
   </section>
 
   <section id="usluge">
     <h2>Usluge</h2>
     <p>
-      Nudimo širok spektar usluga, uključujući web razvoj, digitalni marketing, te savjetovanje za poslovni rast.
-      Svaki projekt pristupamo s puno entuzijazma i profesionalnosti.
+      Naše usluge uključuju izradu web stranica, vizualni identitet, SEO optimizaciju, digitalni marketing i još mnogo toga. Svakom klijentu pristupamo individualno s ciljem da ponudimo najbolje moguće rješenje.
     </p>
     <a href="#kontakt" class="btn-primary">Kontaktirajte nas</a>
   </section>
@@ -164,9 +163,9 @@
   <section id="kontakt">
     <h2>Kontakt</h2>
     <p>
-      Imate pitanja ili želite započeti suradnju? Pošaljite nam poruku i javit ćemo vam se u najkraćem roku!
+      Javite nam se za suradnju, savjet ili ponudu. Dostupni smo putem emaila i telefona.
     </p>
-    <p>Email: info@mateglobal.hr</p>
+    <p>Email: <a href="mailto:info@mateglobal.hr">info@mateglobal.hr</a></p>
     <p>Telefon: +385 91 234 5678</p>
   </section>
 </main>

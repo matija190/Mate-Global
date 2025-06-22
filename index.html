@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mate Global</title>
     <style>
         body {
@@ -14,7 +14,7 @@
         }
 
         .header {
-            background-color: #ffffff; /* Bijela pozadina */
+            background-color: white; /* BIJELA POZADINA */
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -22,15 +22,21 @@
             flex-wrap: wrap;
         }
 
+        .logo-container {
+            background-color: white; /* BIJELA POZADINA IZA LOGA */
+            padding: 5px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
         .logo {
+            max-width: 150px;  /* MOŽEŠ POVEĆATI ILI SMANJITI */
             height: auto;
-            max-height: 80px;
-            width: auto;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease;
         }
 
         .logo:hover {
-            transform: scale(1.1); /* Opcionalno povećanje na hover */
+            transform: scale(1.05); /* NEOBAVEZNO: efekt povećanja na hover */
         }
 
         .nav {
@@ -69,10 +75,7 @@
         .container::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
@@ -82,174 +85,6 @@
             margin-top: 40px;
             border-bottom: 2px solid #FFD700;
             padding-bottom: 5px;
-        }
-
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .slides {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-        }
-
-        .slides img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .active {
-            opacity: 1;
-        }
-
-        .gallery {
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin-top: 20px;
-            gap: 10px;
-        }
-
-        .gallery-item {
-            text-align: center;
-        }
-
-        .gallery img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .gallery img:hover {
-            opacity: 0.7;
-        }
-
-        .gallery-text {
-            display: block;
-            text-align: center;
-            margin-top: 5px;
-            font-size: 16px;
-            color: #FFD700;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            margin: 10% auto;
-            display: block;
-            width: 80%;
-            max-width: 900px;
-            border-radius: 10px;
-        }
-
-        .close {
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            cursor: pointer;
-        }
-
-        .close:hover {
-            color: #bbb;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 50%;
-            font-size: 30px;
-            color: #f1f1f1;
-            cursor: pointer;
-            user-select: none;
-            z-index: 100;
-        }
-
-        .arrow-left {
-            left: 10px;
-        }
-
-        .arrow-right {
-            right: 10px;
-        }
-
-        .contact-form {
-            margin-top: 40px;
-            background-color: #ffffff;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: calc(100% - 16px);
-            padding: 8px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .contact-form button {
-            background-color: #003366;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .contact-form button:hover {
-            background-color: #005599;
-        }
-
-        .social-links {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .social-links a {
-            color: #1E90FF;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 15px;
-        }
-
-        .social-links a:hover {
-            text-decoration: underline;
-            color: #1C86E8;
-        }
-
-        .location {
-            text-align: center;
-            margin-top: 10px;
-            font-size: 18px;
         }
 
         .services-list {
@@ -267,61 +102,40 @@
             font-size: 16px;
         }
 
-        .gallery-title {
-            color: #FFD700;
-            text-align: center;
-            font-size: 32px;
-            margin-top: 30px;
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 30px;
+            .logo {
+                max-width: 120px;
+            }
+
+            .nav {
+                gap: 10px;
             }
 
             .nav a {
                 font-size: 16px;
             }
-
-            .slideshow-container {
-                max-width: 100%;
-            }
-
-            .gallery img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .gallery-text {
-                font-size: 14px;
-            }
-
-            .contact-form {
-                padding-left: 15px;
-                padding-right: 15px;
-            }
         }
 
         @media (max-width: 480px) {
-            .nav {
+            .header {
                 flex-direction: column;
                 align-items: center;
             }
 
-            .gallery img {
-                width: 100px;
-                height: 100px;
-            }
-
-            .gallery-title {
-                font-size: 24px;
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 15px;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="logo.png" alt="Mate Global logo" class="logo">
+        <div class="logo-container">
+            <img src="logo.png" alt="Mate Global logo" class="logo">
+        </div>
         <div class="nav">
             <a href="o-nama.html">O nama</a>
             <a href="usluge.html">Usluge</a>
@@ -332,7 +146,8 @@
     <div class="container">
         <div class="content">
             <h2 id="o-nama">O nama</h2>
-            <p>Mate Global d.o.o. je renomirana tvrtka sa sjedištem u Križevcima, specijalizirana za građevinske radove s posebnim naglaskom na Knauf sustave...</p>
+            <p>Mate Global d.o.o. je renomirana tvrtka sa sjedištem u Križevcima, specijalizirana za građevinske radove s posebnim naglaskom na Knauf sustave.</p>
+            <p>Naša misija je osigurati kvalitetnu i preciznu izvedbu građevinskih radova, koristeći najmodernije materijale i tehnike.</p>
 
             <h2>Što nudimo</h2>
             <ul class="services-list">
@@ -343,82 +158,7 @@
                 <li>Adaptacija i rušenje objekata</li>
                 <li>Sanacija i obnova interijera</li>
             </ul>
-
-            <div class="slideshow-container">
-                <div class="slides active"><img src="slika1.jpg" alt="Slika 1"></div>
-                <div class="slides"><img src="slika2.jpg" alt="Slika 2"></div>
-                <div class="slides"><img src="slika3.jpg" alt="Slika 3"></div>
-                <div class="slides"><img src="slika4.jpg" alt="Slika 4"></div>
-                <div class="slides"><img src="slika5.jpg" alt="Slika 5"></div>
-            </div>
-
-            <h2 class="gallery-title">Galerija</h2>
-            <div class="gallery">
-                <div class="gallery-item"><img src="slika1.jpg" onclick="openModal('slika1.jpg')"><span class="gallery-text">Slika 1</span></div>
-                <div class="gallery-item"><img src="slika2.jpg" onclick="openModal('slika2.jpg')"><span class="gallery-text">Slika 2</span></div>
-                <div class="gallery-item"><img src="slika3.jpg" onclick="openModal('slika3.jpg')"><span class="gallery-text">Slika 3</span></div>
-                <div class="gallery-item"><img src="slika4.jpg" onclick="openModal('slika4.jpg')"><span class="gallery-text">Slika 4</span></div>
-                <div class="gallery-item"><img src="slika5.jpg" onclick="openModal('slika5.jpg')"><span class="gallery-text">Slika 5</span></div>
-            </div>
-
-            <div class="contact-form" id="kontakt">
-                <h3>Pošaljite nam poruku</h3>
-                <form action="submit_contact_form.php" method="POST">
-                    <input type="text" name="name" placeholder="Vaše ime" required>
-                    <input type="email" name="email" placeholder="Vaša email adresa" required>
-                    <textarea name="message" placeholder="Vaša poruka" rows="4" required></textarea>
-                    <button type="submit">Pošaljite</button>
-                </form>
-            </div>
-
-            <div class="social-links">
-                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-            </div>
-            <div class="location">Križevci</div>
         </div>
     </div>
-
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <span class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</span>
-        <img class="modal-content" id="img01">
-        <span class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</span>
-    </div>
-
-    <script>
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slides');
-        function showSlides() {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slideIndex++;
-            if (slideIndex > slides.length) slideIndex = 1;
-            slides[slideIndex - 1].classList.add('active');
-            setTimeout(showSlides, 5000);
-        }
-        showSlides();
-
-        let currentSlide = 0;
-        const images = ['slika1.jpg', 'slika2.jpg', 'slika3.jpg', 'slika4.jpg', 'slika5.jpg'];
-
-        function openModal(imgSrc) {
-            const modal = document.getElementById("myModal");
-            const modalImg = document.getElementById("img01");
-            modal.style.display = "block";
-            modalImg.src = imgSrc;
-            currentSlide = images.indexOf(imgSrc);
-        }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        function moveSlide(direction) {
-            currentSlide += direction;
-            if (currentSlide < 0) currentSlide = images.length - 1;
-            if (currentSlide >= images.length) currentSlide = 0;
-            document.getElementById("img01").src = images[currentSlide];
-        }
-    </script>
 </body>
 </html>

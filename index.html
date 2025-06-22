@@ -1,178 +1,316 @@
 <!DOCTYPE html>
 <html lang="hr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mate Global</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #0e7490;
-      --primary-dark: #0f4c75;
-      --background: #f4f8fb;
-      --text: #222;
-      --white: #ffffff;
-      --accent: #38bdf8;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mate Global</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        .header {
+            background-color: #ffffff; /* BIJELA POZADINA */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--background);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+        .header .logo {
+            width: 170px; /* SMANJENI LOGO */
+            height: auto;
+        }
 
-    header {
-      background: var(--primary-dark);
-      color: var(--white);
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+        .nav {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
 
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+        .nav a {
+            text-decoration: none;
+            color: #003366; /* Promjena boje linkova radi kontrasta s bijelom pozadinom */
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    nav {
-      margin-top: 10px;
-    }
+        .nav a:hover {
+            text-decoration: underline;
+        }
 
-    nav a {
-      color: var(--accent);
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(224, 224, 224, 0.8);
+            color: #ffffff;
+            border-radius: 0px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background-image: url('pozadinska-slika.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
 
-    nav a:hover {
-      color: var(--white);
-    }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
 
-    main {
-      flex: 1;
-      max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
+        .content h2 {
+            color: #FFD700;
+            margin-top: 40px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 5px;
+        }
 
-    section {
-      background: var(--white);
-      padding: 30px 35px;
-      border-radius: 12px;
-      margin-bottom: 40px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
-    }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    section:hover {
-      transform: translateY(-3px);
-    }
+        .slides {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
 
-    h2 {
-      color: var(--primary);
-      font-size: 1.6rem;
-      margin-bottom: 15px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
-    }
+        .slides img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
 
-    p {
-      font-size: 1.05rem;
-      color: #444;
-      margin-bottom: 15px;
-    }
+        .active {
+            opacity: 1;
+        }
 
-    .btn-primary {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
+        .gallery {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            gap: 10px;
+        }
 
-    .btn-primary:hover {
-      background: var(--primary-dark);
-    }
+        .gallery-item {
+            text-align: center;
+        }
 
-    footer {
-      background: var(--primary-dark);
-      color: var(--white);
-      text-align: center;
-      padding: 20px 15px;
-      font-size: 0.9rem;
-    }
+        .gallery img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
 
-    @media (max-width: 640px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
+        .gallery img:hover {
+            opacity: 0.7;
+        }
 
-      nav a {
-        margin: 0 8px;
-        font-size: 0.9rem;
-      }
+        .gallery-text {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+            font-size: 16px;
+            color: #FFD700;
+        }
 
-      section {
-        padding: 20px;
-      }
-    }
-  </style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #bbb;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: #f1f1f1;
+            cursor: pointer;
+            user-select: none;
+            z-index: 100;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .contact-form button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .contact-form button:hover {
+            background-color: #005599;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: #1E90FF;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+            color: #1C86E8;
+        }
+
+        .location {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .services-list {
+            list-style-type: none;
+            margin-top: 20px;
+            padding: 0;
+        }
+
+        .services-list li {
+            background-color: #003366;
+            color: white;
+            margin: 8px 0;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .gallery-title {
+            color: #FFD700;
+            text-align: center;
+            font-size: 32px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .header .logo {
+                width: 100px;
+            }
+
+            .nav a {
+                font-size: 16px;
+            }
+
+            .gallery img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gallery img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .gallery-title {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <h1>Mate Global</h1>
-  <nav>
-    <a href="#o-nama">O nama</a>
-    <a href="#usluge">Usluge</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-</header>
-
-<main>
-  <section id="o-nama">
-    <h2>O nama</h2>
-    <p>
-      Dobrodošli na Mate Global – spoj tehnologije, komunikacije i inovacije. Naš tim predano radi na pružanju digitalnih rješenja prilagođenih vašim potrebama.
-    </p>
-  </section>
-
-  <section id="usluge">
-    <h2>Usluge</h2>
-    <p>
-      Naše usluge uključuju izradu web stranica, vizualni identitet, SEO optimizaciju, digitalni marketing i još mnogo toga. Svakom klijentu pristupamo individualno s ciljem da ponudimo najbolje moguće rješenje.
-    </p>
-    <a href="#kontakt" class="btn-primary">Kontaktirajte nas</a>
-  </section>
-
-  <section id="kontakt">
-    <h2>Kontakt</h2>
-    <p>
-      Javite nam se za suradnju, savjet ili ponudu. Dostupni smo putem emaila i telefona.
-    </p>
-    <p>Email: <a href="mailto:info@mateglobal.hr">info@mateglobal.hr</a></p>
-    <p>Telefon: +385 91 234 5678</p>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Mate Global. Sva prava pridržana.
-</footer>
+    <div class="header"><div style="background-color: white; padding: 10px; border-radius: 8px; height: 100px; display: flex; align-items: center;">
+  <img src="logo.png" alt="Mate Global logo" style="height: 300px; width: auto;">
+</div>
+        <div class="nav">
+            <a href="o-nama.html">O nama</a>
+            <a href="usluge.html">Usluge</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+    </div>
 
 </body>
 </html>
